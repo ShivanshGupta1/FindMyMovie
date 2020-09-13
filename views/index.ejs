@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie/Series Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+
+<body>
+    <section class="hero is-danger">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Let's Find Your Movie/TV Series ? 
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <form method="POST" action="/">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input class="input" name="city_name" type="text" placeholder="Example - Game Of Thrones">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info">
+                                    Find My Movie/Series
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% if(weather !== null){ %>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-50x50">
+                                  
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                        <span class="title"></span>
+                                        <br>
+                                        <img style="margin-left: 0px; margin-right: 100px;" src="<%= weather.d[0].i.imageUrl %>" alt="">
+                                        <h1><%= weather.d[0].l %></h1>
+                                        <span style="text-align: center;" class="subtitle"><%= weather.d[0].q %></span>
+                                        <br> 
+                                        Rank - <%= weather.d[0].rank %>
+                                        <br>
+                                        Cast - <%= weather.d[0].s %>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <% } %>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html
